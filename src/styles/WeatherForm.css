@@ -1,0 +1,10 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.input-button {
+    background-color: #114b5f;
+    color: aliceblue;
+}

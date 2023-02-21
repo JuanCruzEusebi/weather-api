@@ -5,12 +5,12 @@
 }
 
 .weather-app-container{
-    border: 2px solid red;
     height: 100vh;
     display: flex;
     flex-direction: column;
     gap: 4rem;
     justify-content: center;
     align-items: center;
+    background-color: #086788;
 }
 

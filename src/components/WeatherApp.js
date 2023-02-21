@@ -5,6 +5,7 @@ import "../styles/WeatherApp.css";
 
 export default function WeatherApp() {
   const [weather, setWeather] = useState(null);
+  const [error, setError] = useState("");
 
   useEffect(() => {
     loadInfo();
@@ -19,23 +20,33 @@ export default function WeatherApp() {
       const req = await fetch(
         `http://api.weatherapi.com/v1/current.json?key=173976480d4e46fba26144654232002&q=${city}&aqi=no`
       );
-      const json = await req.json();
-      setWeather(json);
-      console.log(json);
+      if (req.ok) {
+        const json = await req.json();
+        setWeather(json);
+        setError("");
+      } else {
+        setError(`Could not load weather information for ${city}.`);
+      }
     } catch (error) {
-      console.log("error");
+      setError("Could not load weather information.");
+      console.log(error);
     }
   }
 
   function handleChangeCity(city) {
     setWeather(null);
+    setError("");
     loadInfo(city);
   }
 
   return (
     <div className="weather-app-container">
       <WeatherForm onChangeCity={handleChangeCity} />
-      <WeatherMainInfo className="test" weather={weather} />
+      {error ? (
+        <p className="error">{error}</p>
+      ) : (
+        <WeatherMainInfo className="test" weather={weather} />
+      )}
     </div>
   );
 }

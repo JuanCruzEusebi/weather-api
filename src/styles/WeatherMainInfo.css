@@ -3,3 +3,56 @@
     margin: 0;
     padding: 0;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+.h1-container {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+.data-container {
+    display: flex;
+    gap: 1rem;
+    align-items: end;
+}
+
+@media (max-width: 1000px) {
+    .query {
+      flex-direction: column;
+    }
+    .data-container {
+        margin-top: 2rem;
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+    }
+    .frame  {
+        margin: auto;
+    }
+    .weather-heading {
+        text-align: center;
+        margin-left: 3rem;
+        margin-right: 3rem;
+    }
+  }
+@media (max-width: 480px) {
+    .query {
+      flex-direction: column;
+    }
+    .data-container {
+        margin-top: 2rem;
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+    }
+    .frame  {
+        margin: auto;
+        width: 90%;
+    }
+    .weather-heading {
+        text-align: center;
+    }
+  }

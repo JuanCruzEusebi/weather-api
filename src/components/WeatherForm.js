@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "../styles/WeatherForm.css";
 
 export default function WeatherForm({ onChangeCity }) {
   const [city, setCity] = useState("");
@@ -19,10 +20,11 @@ export default function WeatherForm({ onChangeCity }) {
   return (
     <form onSubmit={handleSubmit}>
       <input
-        className="border border-black"
+        className="p-2 rounded-l-md focus:outline-none"
         type="text"
         onChange={onChange}
       ></input>
+      <button className="p-2 input-button rounded-r-md">Search</button>
     </form>
   );
 }
