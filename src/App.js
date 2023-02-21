@@ -1,9 +1,9 @@
-import WeatherApp from './components/WeatherApp';
+import WeatherApp from "./components/WeatherApp";
 
 function App() {
   return (
-    <div className="App">
-      <WeatherApp/>
+    <div className="app-container">
+      <WeatherApp />
     </div>
   );
 }
